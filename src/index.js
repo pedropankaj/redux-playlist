@@ -24,7 +24,23 @@ function playlist(state = [], action) {
 
 const store = createStore(playlist);
 
-store.subscribe(() => console.log(store.getState()));
+const addTrackBtn = document.querySelector('.addTrack');
+const trackInput = document.querySelector('.trackInput');
 
-store.dispatch({ type: ADD_TRACK, payload: 'Smells like spirit' });
-store.dispatch({ type: ADD_TRACK, payload: 'Enter sandman' });
+store.subscribe(() => {
+  const list = document.querySelector('.list');
+
+  list.innerHTML = '';
+
+  store.getState().forEach((item) => {
+    const listItem = document.createElement('li');
+    listItem.textContent = item;
+    list.appendChild(listItem);
+  });
+
+  trackInput.value = '';
+});
+
+addTrackBtn.addEventListener('click', () => {
+  store.dispatch({ type: ADD_TRACK, payload: trackInput.value });
+});
