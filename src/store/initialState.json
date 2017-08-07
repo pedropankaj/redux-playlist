@@ -1,10 +1,17 @@
 {
   "tracks": [
-  "Smells like spirit",
-  "Enter Sandman"
+    {
+      "id": "1502095171502",
+      "name": "Smells like spirit"
+    },
+    {
+      "id": "1502095221141",
+      "name": "Enter Sandman"
+    }
   ],
   "playlists": [
     "My home playlist",
     "My work playlist"
-  ]
+  ],
+  "filter": ""
 }

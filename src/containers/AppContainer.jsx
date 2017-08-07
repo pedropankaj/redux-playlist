@@ -2,17 +2,18 @@ import { connect } from 'react-redux';
 
 import App from '../App';
 
-import { addTrack } from '../actions/index';
+import { addTrack, findTrack } from '../actions/index';
 
 function mapStateToProps(state) {
   return {
-    trackList: state.tracks,
+    trackList: state.tracks.filter(track => track.name.includes(state.filter)),
   };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
     onAdd: track => dispatch(addTrack(track)),
+    onFind: track => dispatch(findTrack(track)),
   };
 }
 
