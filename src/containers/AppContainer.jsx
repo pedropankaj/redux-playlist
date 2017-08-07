@@ -6,7 +6,7 @@ import { addTrack } from '../actions/index';
 
 function mapStateToProps(state) {
   return {
-    trackList: state,
+    trackList: state.tracks,
   };
 }
 

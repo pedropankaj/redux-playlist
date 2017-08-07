@@ -1,11 +1,9 @@
-import { ADD_TRACK } from '../actions/actionTypes';
+import { combineReducers } from 'redux';
 
-export default function reducer(state = [], action) {
-  switch (action.type) {
-    case ADD_TRACK:
-      return [...state, action.payload];
+import tracks from './tracks';
+import playlists from './playlists';
 
-    default:
-      return state;
-  }
-}
+export default combineReducers({
+  tracks,
+  playlists,
+});

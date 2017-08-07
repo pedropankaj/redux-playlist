@@ -1,11 +1,7 @@
 import { createStore } from 'redux';
 
 import reducer from '../reducers/index';
-
-const initialState = [
-  'Smells like spirit',
-  'Enter Sandman',
-];
+import initialState from './initialState.json';
 
 const store = createStore(
   reducer,
