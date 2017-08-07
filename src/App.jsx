@@ -29,6 +29,9 @@ class App extends React.Component {
           <input type="text" ref={(input) => { this.searchName = input; }} />
           <button onClick={this.handleFindTrack}>Find track</button>
         </div>
+        <div>
+          <button onClick={this.props.handleGetTracks}>Get tracks</button>
+        </div>
         <ul>
           {trackList.map(track =>
             <li key={track.id}>{track.name}</li>)

@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 
 import App from '../App';
 
-import { addTrack, findTrack } from '../actions/index';
+import { addTrack, findTrack, getTracks } from '../actions/index';
 
 function mapStateToProps(state) {
   return {
@@ -14,6 +14,7 @@ function mapDispatchToProps(dispatch) {
   return {
     onAdd: track => dispatch(addTrack(track)),
     onFind: track => dispatch(findTrack(track)),
+    handleGetTracks: () => dispatch(getTracks()),
   };
 }
 
