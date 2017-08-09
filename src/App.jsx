@@ -1,5 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './App.css';
+
+import Menu from './components/Menu';
 
 class App extends React.Component {
   handleAddTrack = () => {
@@ -21,6 +24,7 @@ class App extends React.Component {
 
     return (
       <div>
+        <Menu />
         <div>
           <input type="text" ref={(input) => { this.trackName = input; }} />
           <button onClick={this.handleAddTrack}>Add track</button>
@@ -33,9 +37,11 @@ class App extends React.Component {
           <button onClick={this.props.handleGetTracks}>Get tracks</button>
         </div>
         <ul>
-          {trackList.map(track =>
-            <li key={track.id}>{track.name}</li>)
-          }
+          {trackList.map(track => (
+            <li key={track.id}>
+              <Link to={`/tracks/${track.id}`}>{track.name}</Link>
+            </li>
+          ))}
         </ul>
       </div>
     );
